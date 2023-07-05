@@ -1,0 +1,20 @@
+{
+    "id": "YoloBitRoboconExtension",
+    "extensionDisplay": {
+        "name": "gui.externalExtension.YoloBitRoboconExtension.name",
+        "iconURL": "/images/Robocon01.jpg",
+        "insetIconURL": "/images/Robocon01.jpg",
+        "description": "gui.externalExtension.YoloBitRoboconExtension.description"
+    },
+    "translate": {
+        "vi": {
+            "gui.externalExtension.YoloBitRoboconExtension.name": "ROBOCON",
+            "gui.externalExtension.YoloBitRoboconExtension.description": "Mục mở rộng cho các khối lệnh thi đấu Robocon"
+
+        },
+        "en": {
+            "gui.externalExtension.YoloBitRoboconExtension.name": "Robocon extension",
+            "gui.externalExtension.YoloBitRoboconExtension.description": "Template extension description"
+        }
+}
+}
