@@ -50,7 +50,7 @@ class Scratch3YoloBitRobocon {
                     },
                     text: [
                         {
-                            default: 'dò line với tốc độ [SPEED] (0-100) trong [TIME_DELAY] giây',
+                            default: 'dò line với tốc độ [SPEED] trong [TIME_DELAY] giây',
                             id: "gui.externalExtension.YoloBitRoboconExtension.follow_line_in_time"
                         }
                     ],
@@ -62,6 +62,37 @@ class Scratch3YoloBitRobocon {
                         TIME_DELAY: {
                             type: Scratch.ArgumentType.NUMBER,
                             defaultValue: 5
+                        }
+                    },
+                    blockType: Scratch.BlockType.COMMAND
+                },                
+                {
+                    opcode: 'turn_until_condition',
+                    rawCode: {
+                        imports: 'from rover import *\nfrom robocon import *\n',
+                        code:'turn_until_condition(/*{SPEED_LEFT}*/, /*{SPEED_RIGHT}*/, lambda: (/*{LAMBDA}*/), /*{TIME_DELAY}*/000)\n'
+                    },
+                    text: [
+                        {
+                            default: 'quay động cơ trái [SPEED_LEFT] phải [SPEED_RIGHT] đến khi [LAMBDA] tối đa [TIME_DELAY] giây',
+                            id: "gui.externalExtension.YoloBitRoboconExtension.turn_until_condition"
+                        }
+                    ],
+                    arguments: {
+                        SPEED_LEFT: {
+                            type: Scratch.ArgumentType.NUMBER,
+                            defaultValue: 50
+                        },
+                        SPEED_RIGHT: {
+                            type: Scratch.ArgumentType.NUMBER,
+                            defaultValue: 1
+                        },
+                        TIME_DELAY: {
+                            type: Scratch.ArgumentType.NUMBER,
+                            defaultValue: 1
+                        },
+                        LAMBDA: {
+                            type: Scratch.ArgumentType.BOOLEAN
                         }
                     },
                     blockType: Scratch.BlockType.COMMAND
@@ -90,37 +121,6 @@ class Scratch3YoloBitRobocon {
                         TIME_DELAY: {
                             type: Scratch.ArgumentType.NUMBER,
                             defaultValue: 1
-                        }
-                    },
-                    blockType: Scratch.BlockType.COMMAND
-                },
-                {
-                    opcode: 'turn_until_condition',
-                    rawCode: {
-                        imports: 'from rover import *\nfrom robocon import *\n',
-                        code:'turn_until_condition(/*{SPEED_LEFT}*/, /*{SPEED_RIGHT}*/, lambda: (/*{LAMBDA}*/), /*{TIME_DELAY}*/000)\n'
-                    },
-                    text: [
-                        {
-                            default: 'quay động cơ trái [SPEED_LEFT] phải [SPEED_RIGHT] đến khi [LAMBDA] tối đa [TIME_DELAY] giây',
-                            id: "gui.externalExtension.YoloBitRoboconExtension.turn_until_condition"
-                        }
-                    ],
-                    arguments: {
-                        SPEED_LEFT: {
-                            type: Scratch.ArgumentType.NUMBER,
-                            defaultValue: 50
-                        },
-                        SPEED_RIGHT: {
-                            type: Scratch.ArgumentType.NUMBER,
-                            defaultValue: 1
-                        },
-                        TIME_DELAY: {
-                            type: Scratch.ArgumentType.NUMBER,
-                            defaultValue: 1
-                        },
-                        LAMBDA: {
-                            type: Scratch.ArgumentType.BOOLEAN
                         }
                     },
                     blockType: Scratch.BlockType.COMMAND
