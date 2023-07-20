@@ -9,12 +9,20 @@
     "translate": {
         "vi": {
             "gui.externalExtension.YoloBitRoboconExtension.name": "ROBOCON",
-            "gui.externalExtension.YoloBitRoboconExtension.description": "Mục mở rộng cho các khối lệnh thi đấu Robocon"
+            "gui.externalExtension.YoloBitRoboconExtension.description": "Mục mở rộng cho các khối lệnh thi đấu Robocon",
+            "gui.externalExtension.YoloBitRoboconExtension.robocon_follow_line_until": "dò line với tốc độ [SPEED] cho đến khi [LAMBDA] tối đa [TIME] giây",
+            "gui.externalExtension.YoloBitRoboconExtension.follow_line_in_time": "dò line với tốc độ [SPEED] trong [TIME_DELAY] giây",
+            "gui.externalExtension.YoloBitRoboconExtension.turn_until_condition": "quay động cơ trái [SPEED_LEFT] phải [SPEED_RIGHT] đến khi [LAMBDA] tối đa [TIME_DELAY] giây",
+            "gui.externalExtension.YoloBitRoboconExtension.turn_until_black_line": "quay động cơ trái [SPEED_LEFT] phải [SPEED_RIGHT] đến khi gặp vạch đen tối đa [TIME_DELAY] giây"
 
         },
         "en": {
             "gui.externalExtension.YoloBitRoboconExtension.name": "Robocon extension",
-            "gui.externalExtension.YoloBitRoboconExtension.description": "Template extension description"
+            "gui.externalExtension.YoloBitRoboconExtension.description": "Robocon extension for Yolo:Bit",
+            "gui.externalExtension.YoloBitRoboconExtension.robocon_follow_line_until": "follow line with speed [SPEED] until [LAMBDA] maximum [TIME] seconds",
+            "gui.externalExtension.YoloBitRoboconExtension.follow_line_in_time": "follow line with speed [SPEED] in [TIME_DELAY] seconds",
+            "gui.externalExtension.YoloBitRoboconExtension.turn_until_condition": "motor left rotates [SPEED_LEFT] right [SPEED_RIGHT] until [LAMBDA] maximum [TIME_DELAY] seconds",
+            "gui.externalExtension.YoloBitRoboconExtension.turn_until_black_line": "motor left rotates [SPEED_LEFT] right [SPEED_RIGHT] until meet blackline maximum [TIME_DELAY] seconds"
         }
 }
 }
