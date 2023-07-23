@@ -19,7 +19,7 @@ class Scratch3YoloBitRobocon {
                     opcode: 'robocon_follow_line_until',
                     rawCode: {
                         imports: 'from rover import *\nfrom robocon import *\n',
-                        code:'follow_line_until(/*{SPEED}*/, lambda:(/*{LAMBDA}*/), /*{TIME}*/000)\n'
+                        code:'follow_line_until(/*{SPEED}*/, lambda:(/*{LAMBDA}*/), /*{TIME}*/*1000)\n'
                     },
                     text: [
                         {
@@ -46,7 +46,7 @@ class Scratch3YoloBitRobocon {
                     opcode: 'follow_line_in_time',
                     rawCode: {
                         imports: 'from rover import *\nfrom robocon import *\n',
-                        code:'follow_line_until(/*{SPEED}*/, lambda: (False), /*{TIME_DELAY}*/000)\n'
+                        code:'follow_line_until(/*{SPEED}*/, lambda: (False), /*{TIME_DELAY}*/*1000)\n'
                     },
                     text: [
                         {
@@ -70,7 +70,7 @@ class Scratch3YoloBitRobocon {
                     opcode: 'turn_until_condition',
                     rawCode: {
                         imports: 'from rover import *\nfrom robocon import *\n',
-                        code:'turn_until_condition(/*{SPEED_LEFT}*/, /*{SPEED_RIGHT}*/, lambda: (/*{LAMBDA}*/), /*{TIME_DELAY}*/000)\n'
+                        code:'turn_until_condition(/*{SPEED_LEFT}*/, /*{SPEED_RIGHT}*/, lambda: (/*{LAMBDA}*/), /*{TIME_DELAY}*/*1000)\n'
                     },
                     text: [
                         {
@@ -101,7 +101,7 @@ class Scratch3YoloBitRobocon {
                     opcode: 'turn_until_black_line',
                     rawCode: {
                         imports: 'from rover import *\nfrom robocon import *\n',
-                        code:'turn_until_line_detected(/*{SPEED_LEFT}*/, /*{SPEED_RIGHT}*/, /*{TIME_DELAY}*/000)\n'
+                        code:'turn_until_line_detected(/*{SPEED_LEFT}*/, /*{SPEED_RIGHT}*/, /*{TIME_DELAY}*/*1000)\n'
                     },
                     text: [
                         {
