@@ -111,15 +111,15 @@ class Scratch3YoloBitRobocon {
                     ],
                     arguments: {
                         SPEED_LEFT: {
-                            type: Scratch.ArgumentType.INTERGER_NUMBER,
+                            type: Scratch.ArgumentType.INTEGER_NUMBER,
                             defaultValue: '50'
                         },
                         SPEED_RIGHT: {
-                            type: Scratch.ArgumentType.INTERGER_NUMBER,
+                            type: Scratch.ArgumentType.INTEGER_NUMBER,
                             defaultValue: '50'
                         },
                         TIME_DELAY: {
-                            type: Scratch.ArgumentType.INTERGER_NUMBER,
+                            type: Scratch.ArgumentType.INTEGER_NUMBER,
                             defaultValue: 5
                         }
                     },
