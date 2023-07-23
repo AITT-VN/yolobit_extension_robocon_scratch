@@ -81,11 +81,11 @@ class Scratch3YoloBitRobocon {
                     arguments: {
                         SPEED_LEFT: {
                             type: Scratch.ArgumentType.NUMBER,
-                            defaultValue: '50'
+                            defaultValue: 50
                         },
                         SPEED_RIGHT: {
                             type: Scratch.ArgumentType.NUMBER,
-                            defaultValue: '50'
+                            defaultValue: 50
                         },
                         TIME_DELAY: {
                             type: Scratch.ArgumentType.NUMBER,
@@ -111,15 +111,15 @@ class Scratch3YoloBitRobocon {
                     ],
                     arguments: {
                         SPEED_LEFT: {
-                            type: Scratch.ArgumentType.INTEGER_NUMBER,
-                            defaultValue: '50'
+                            type: Scratch.ArgumentType.NUMBER,
+                            defaultValue: 50
                         },
                         SPEED_RIGHT: {
-                            type: Scratch.ArgumentType.INTEGER_NUMBER,
-                            defaultValue: '50'
+                            type: Scratch.ArgumentType.NUMBER,
+                            defaultValue: 50
                         },
                         TIME_DELAY: {
-                            type: Scratch.ArgumentType.INTEGER_NUMBER,
+                            type: Scratch.ArgumentType.NUMBER,
                             defaultValue: 5
                         }
                     },
