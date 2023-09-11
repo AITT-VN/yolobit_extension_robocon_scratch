@@ -124,8 +124,68 @@ class Scratch3YoloBitRobocon {
                         }
                     },
                     blockType: Scratch.BlockType.COMMAND
-                }                              
-            ]            
+                },
+                {
+                    opcode: 'open_gripper',
+                    rawCode: {
+                        function:'def moveGripper(moveToGripper, speed=80):\n'+
+                        '    defaultGripper =90\n'
+                        +'    sleep = translate(speed, 0, 100, 50, 0.1)\n'                
+                        +'    if speed == 0:\n'
+                        +'        return\n'                
+                        +'    if moveToGripper < 0:\n'
+                        +'        moveToGripper = 0\n'
+                        +'    if moveToGripper > 90\n:'
+                        +'        moveToGripper = 90\n'                
+                        +'    if moveToGripper > 90:\n'
+                        +'        for i in range(defaultGripper, moveToGripper):\n'
+                        +'            rover.servo_write(i)\n'
+                        +'            defaultGripper = moveToGripper\n'
+                        +'            time.sleep_ms(int(sleep))\n'
+                        +'    else:\n'
+                        +'        for i in range(defaultGripper, moveToGripper, -1):\n'
+                        +'            rover.servo_write(i)\n'
+                        +'            defaultGripper = moveToGripper\n'
+                        +'            time.sleep_ms(int(sleep))\n',
+                        code:'moveGripper(/*{ACTION}*/, /*{SPEED}*/)\n'
+                    },
+                    text: [
+                        {
+                            default: '[ACTION] tay gắp tốc độ [SPEED]',
+                            id: "gui.externalExtension.YoloBitRoboconExtension.open_gripper"
+                        }
+                    ],
+                    arguments: {
+                        SPEED: {
+                            type: Scratch.ArgumentType.NUMBER,
+                            defaultValue: 80
+                        },
+                        ACTION: {
+                            menu: 'action'
+                        }
+                    },
+                    blockType: Scratch.BlockType.COMMAND
+                }
+                                              
+            ],
+            menus:{
+                action:[
+                    {
+                        text: {
+                            default: 'đóng',
+                            id: 'gui.externalExtension.YoloBitRoboconExtension.close'
+                        },
+                        value: '0'
+                    },
+                    {
+                        text: {
+                            default:'mở',
+                            id: 'gui.externalExtension.YoloBitRoboconExtension.open'
+                        },
+                        value: '90'
+                    }
+                ]
+            }                                         
         };
     }
 }
