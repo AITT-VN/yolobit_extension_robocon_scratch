@@ -194,7 +194,7 @@ class Scratch3YoloBitRobocon {
                     text: [
                         {
                             default: '[ACTION] đầu nâng [SERVO] tốc độ [SPEED]',
-                            id: "gui.externalExtension.YoloBitRoboconExtension.open_gripper"
+                            id: "gui.externalExtension.YoloBitRoboconExtension.lift_gripper"
                         }
                     ],
                     arguments: {
