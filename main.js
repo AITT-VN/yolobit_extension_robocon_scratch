@@ -126,32 +126,31 @@ class Scratch3YoloBitRobocon {
                     blockType: Scratch.BlockType.COMMAND
                 },
                 {
-                    opcode: 'open_gripper',
+                    opcode: 'move_gripper',
                     rawCode: {
-                        function:'def moveGripper(moveToGripper, speed=80):\n'+
-                        '    defaultGripper =90\n'
+                        function:'defaultGripper/*{SERVO}*/ = 0\N'
+                        + 'def moveGripper(moveToGripper, speed=80):\n'+
+                        '    global defaultGripper/*{SERVO}*/\n'
                         +'    sleep = translate(speed, 0, 100, 50, 0.1)\n'                
                         +'    if speed == 0:\n'
                         +'        return\n'                
                         +'    if moveToGripper < 0:\n'
                         +'        moveToGripper = 0\n'
-                        +'    if moveToGripper > 90\n:'
-                        +'        moveToGripper = 90\n'                
                         +'    if moveToGripper > 90:\n'
-                        +'        for i in range(defaultGripper, moveToGripper):\n'
-                        +'            rover.servo_write(i)\n'
-                        +'            defaultGripper = moveToGripper\n'
+                        +'        moveToGripper = 90\n'                
+                        +'    if moveToGripper < defaultGripper:\n'
+                        +'        for i in range(defaultGripper, moveToGripper, -1):\n'
+                        +'            rover.servo_write(/*{SERVO}*/, i)\n'
                         +'            time.sleep_ms(int(sleep))\n'
                         +'    else:\n'
-                        +'        for i in range(defaultGripper, moveToGripper, -1):\n'
-                        +'            rover.servo_write(i)\n'
-                        +'            defaultGripper = moveToGripper\n'
+                        +'        for i in range(defaultGripper, moveToGripper):\n'
+                        +'            rover.servo_write(/*{SERVO}*/, i)\n'
                         +'            time.sleep_ms(int(sleep))\n',
                         code:'moveGripper(/*{ACTION}*/, /*{SPEED}*/)\n'
                     },
                     text: [
                         {
-                            default: '[ACTION] tay gắp tốc độ [SPEED]',
+                            default: '[ACTION] tay gắp [SERVO] tốc độ [SPEED]',
                             id: "gui.externalExtension.YoloBitRoboconExtension.open_gripper"
                         }
                     ],
@@ -162,6 +161,52 @@ class Scratch3YoloBitRobocon {
                         },
                         ACTION: {
                             menu: 'action'
+                        },
+                        SERVO:{
+                            menu: 'servo_pins'
+                        }
+                    },
+                    blockType: Scratch.BlockType.COMMAND
+                },
+                {
+                    opcode: 'lift_gripper',
+                    rawCode: {
+                        function:'defaultLifter/*{SERVO}*/ = 0\N'
+                        + 'def moveLifter(moveToLifter, speed=80):\n'+
+                        '    global defaultLifter/*{SERVO}*/\n'
+                        +'    sleep = translate(speed, 0, 100, 50, 0.1)\n'                
+                        +'    if speed == 0:\n'
+                        +'        return\n'                
+                        +'    if moveToLifter < 0:\n'
+                        +'        moveToLifter = 0\n'
+                        +'    if moveToLifter > 90:\n'
+                        +'        moveToLifter = 90\n'                
+                        +'    if moveToLifter < defaultLifter:\n'
+                        +'        for i in range(defaultLifter, moveToLifter, -1):\n'
+                        +'            rover.servo_write(/*{SERVO}*/, i)\n'
+                        +'            time.sleep_ms(int(sleep))\n'
+                        +'    else:\n'
+                        +'        for i in range(defaultLifter, moveToLifter):\n'
+                        +'            rover.servo_write(/*{SERVO}*/, i)\n'
+                        +'            time.sleep_ms(int(sleep))\n',
+                        code:'moveLifter(/*{ACTION}*/, /*{SPEED}*/)\n'
+                    },
+                    text: [
+                        {
+                            default: '[ACTION] đầu nâng [SERVO] tốc độ [SPEED]',
+                            id: "gui.externalExtension.YoloBitRoboconExtension.open_gripper"
+                        }
+                    ],
+                    arguments: {
+                        SPEED: {
+                            type: Scratch.ArgumentType.NUMBER,
+                            defaultValue: 80
+                        },
+                        ACTION: {
+                            menu: 'action'
+                        },
+                        SERVO:{
+                            menu: 'servo_pins'
                         }
                     },
                     blockType: Scratch.BlockType.COMMAND
@@ -172,17 +217,33 @@ class Scratch3YoloBitRobocon {
                 action:[
                     {
                         text: {
-                            default: 'đóng',
-                            id: 'gui.externalExtension.YoloBitRoboconExtension.close'
+                            default: 'nâng',
+                            id: 'gui.externalExtension.YoloBitRoboconExtension.lift_up'
                         },
-                        value: '0'
+                        value: '90'
                     },
                     {
                         text: {
-                            default:'mở',
-                            id: 'gui.externalExtension.YoloBitRoboconExtension.open'
+                            default:'hạ',
+                            id: 'gui.externalExtension.YoloBitRoboconExtension.lift_down'
                         },
-                        value: '90'
+                        value: '0'
+                    }
+                ],
+                servo_pins:[
+                    {
+                        text: {
+                            default: 'S1',
+                            id: 'gui.externalExtension.YoloBitRoboconExtension.servo1'
+                        },
+                        value: '1'
+                    },
+                    {
+                        text: {
+                            default:'S2',
+                            id: 'gui.externalExtension.YoloBitRoboconExtension.servo2'
+                        },
+                        value: '2'
                     }
                 ]
             }                                         
