@@ -11,6 +11,8 @@ class Scratch3YoloBitRobocon {
             name: 'Robocon',
             blockIconURI: iconURL,
             allowBlockTypes: {
+                move_gripper : 1,
+                lift_gripper : 1,
             },
             color1: '#cb2026',
             color2: '#cb2026',
@@ -128,9 +130,9 @@ class Scratch3YoloBitRobocon {
                 {
                     opcode: 'move_gripper',
                     rawCode: {
-                        function:'defaultGripper/*{SERVO}*/ = 0\N'
+                        function:'defaultGripper = 0\n'
                         + 'def moveGripper(moveToGripper, speed=80):\n'+
-                        '    global defaultGripper/*{SERVO}*/\n'
+                        '    global defaultGripper\n'
                         +'    sleep = translate(speed, 0, 100, 50, 0.1)\n'                
                         +'    if speed == 0:\n'
                         +'        return\n'                
@@ -145,7 +147,8 @@ class Scratch3YoloBitRobocon {
                         +'    else:\n'
                         +'        for i in range(defaultGripper, moveToGripper):\n'
                         +'            rover.servo_write(/*{SERVO}*/, i)\n'
-                        +'            time.sleep_ms(int(sleep))\n',
+                        +'            time.sleep_ms(int(sleep))\n'
+                        +'    defaultGripper = moveToGripper\n',
                         code:'moveGripper(/*{ANGLE}*/, /*{SPEED}*/)\n'
                     },
                     text: [
@@ -172,9 +175,9 @@ class Scratch3YoloBitRobocon {
                 {
                     opcode: 'lift_gripper',
                     rawCode: {
-                        function:'defaultLifter/*{SERVO}*/ = 0\N'
+                        function:'defaultLifter = 0\n'
                         + 'def moveLifter(moveToLifter, speed=80):\n'+
-                        '    global defaultLifter/*{SERVO}*/\n'
+                        '    global defaultLifter\n'
                         +'    sleep = translate(speed, 0, 100, 50, 0.1)\n'                
                         +'    if speed == 0:\n'
                         +'        return\n'                
@@ -189,7 +192,8 @@ class Scratch3YoloBitRobocon {
                         +'    else:\n'
                         +'        for i in range(defaultLifter, moveToLifter):\n'
                         +'            rover.servo_write(/*{SERVO}*/, i)\n'
-                        +'            time.sleep_ms(int(sleep))\n',
+                        +'            time.sleep_ms(int(sleep))\n'
+                        +'    defaultLifter = moveToLifter\n',
                         code:'moveLifter(/*{ANGLE}*/, /*{SPEED}*/)\n'
                     },
                     text: [
