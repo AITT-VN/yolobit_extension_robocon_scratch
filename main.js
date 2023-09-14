@@ -146,11 +146,11 @@ class Scratch3YoloBitRobocon {
                         +'        for i in range(defaultGripper, moveToGripper):\n'
                         +'            rover.servo_write(/*{SERVO}*/, i)\n'
                         +'            time.sleep_ms(int(sleep))\n',
-                        code:'moveGripper(/*{ACTION}*/, /*{SPEED}*/)\n'
+                        code:'moveGripper(/*{ANGLE}*/, /*{SPEED}*/)\n'
                     },
                     text: [
                         {
-                            default: '[ACTION] tay gắp [SERVO] tốc độ [SPEED]',
+                            default: 'tay gắp [SERVO] mở [ANGLE] độ tốc độ [SPEED]',
                             id: "gui.externalExtension.YoloBitRoboconExtension.open_gripper"
                         }
                     ],
@@ -159,8 +159,9 @@ class Scratch3YoloBitRobocon {
                             type: Scratch.ArgumentType.NUMBER,
                             defaultValue: 80
                         },
-                        ACTION: {
-                            menu: 'action'
+                        ANGLE: {
+                            type: Scratch.ArgumentType.NUMBER,
+                            defaultValue: 90
                         },
                         SERVO:{
                             menu: 'servo_pins'
@@ -189,11 +190,11 @@ class Scratch3YoloBitRobocon {
                         +'        for i in range(defaultLifter, moveToLifter):\n'
                         +'            rover.servo_write(/*{SERVO}*/, i)\n'
                         +'            time.sleep_ms(int(sleep))\n',
-                        code:'moveLifter(/*{ACTION}*/, /*{SPEED}*/)\n'
+                        code:'moveLifter(/*{ANGLE}*/, /*{SPEED}*/)\n'
                     },
                     text: [
                         {
-                            default: '[ACTION] đầu nâng [SERVO] tốc độ [SPEED]',
+                            default: 'đầu nâng [SERVO] nâng góc [ANGLE] tốc độ [SPEED]',
                             id: "gui.externalExtension.YoloBitRoboconExtension.lift_gripper"
                         }
                     ],
@@ -202,8 +203,9 @@ class Scratch3YoloBitRobocon {
                             type: Scratch.ArgumentType.NUMBER,
                             defaultValue: 80
                         },
-                        ACTION: {
-                            menu: 'action'
+                        ANGLE: {
+                            type: Scratch.ArgumentType.NUMBER,
+                            defaultValue: 90
                         },
                         SERVO:{
                             menu: 'servo_pins'
@@ -214,22 +216,6 @@ class Scratch3YoloBitRobocon {
                                               
             ],
             menus:{
-                action:[
-                    {
-                        text: {
-                            default: 'nâng',
-                            id: 'gui.externalExtension.YoloBitRoboconExtension.lift_up'
-                        },
-                        value: '90'
-                    },
-                    {
-                        text: {
-                            default:'hạ',
-                            id: 'gui.externalExtension.YoloBitRoboconExtension.lift_down'
-                        },
-                        value: '0'
-                    }
-                ],
                 servo_pins:[
                     {
                         text: {
