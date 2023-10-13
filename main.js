@@ -128,6 +128,25 @@ class Scratch3YoloBitRobocon {
                     blockType: Scratch.BlockType.COMMAND
                 },
                 {
+                    opcode: 'rover_control_gripper',
+                    rawCode: {
+                        imports: 'from rover import *\nfrom robocon import *\n',
+                        code:'/*{ACTION}*/\n'
+                    },
+                    text: [
+                        {
+                            default: '[ACTION] tay gắp',
+                            id: "gui.externalExtension.YoloBitRoboconExtension.rover_control_gripper"
+                        }
+                    ],
+                    arguments: {
+                        ACTION: {
+                            menu: 'actions'
+                        }
+                    },
+                    blockType: Scratch.BlockType.COMMAND
+                },
+                {
                     opcode: 'rover_control_servo',
                     rawCode: {
                         imports: 'from rover import *\nfrom robocon import *\n',
@@ -153,26 +172,8 @@ class Scratch3YoloBitRobocon {
                         }
                     },
                     blockType: Scratch.BlockType.COMMAND
-                },
-                {
-                    opcode: 'rover_control_gripper',
-                    rawCode: {
-                        imports: 'from rover import *\nfrom robocon import *\n',
-                        code:'/*{ACTION}*/\n'
-                    },
-                    text: [
-                        {
-                            default: '[ACTION] tay gắp',
-                            id: "gui.externalExtension.YoloBitRoboconExtension.rover_control_gripper"
-                        }
-                    ],
-                    arguments: {
-                        ACTION: {
-                            menu: 'actions'
-                        }
-                    },
-                    blockType: Scratch.BlockType.COMMAND
                 }
+    
             ],
             menus:{
                 servo_pins: [
