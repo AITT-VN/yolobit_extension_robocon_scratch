@@ -126,8 +126,102 @@ class Scratch3YoloBitRobocon {
                         }
                     },
                     blockType: Scratch.BlockType.COMMAND
+                },
+                {
+                    opcode: 'rover_control_servo',
+                    rawCode: {
+                        imports: 'from rover import *\nfrom robocon import *\n',
+                        code:'set_servo_position(/*{SERVO}*/, /*{POSITION}*/, /*{SPEED}*/)\n'
+                    },
+                    text: [
+                        {
+                            default: 'servo [SERVO] xoay [POSITION] độ tốc độ [SPEED] (0-100)',
+                            id: "gui.externalExtension.YoloBitRoboconExtension.rover_control_servo"
+                        }
+                    ],
+                    arguments: {
+                        SERVO: {
+                            menu: 'servo_pins'
+                        },
+                        POSITION: {
+                            type: Scratch.ArgumentType.NUMBER,
+                            defaultValue: 90
+                        },
+                        SPEED: {
+                            type: Scratch.ArgumentType.NUMBER,
+                            defaultValue: 80
+                        }
+                    },
+                    blockType: Scratch.BlockType.COMMAND
+                },
+                {
+                    opcode: 'rover_control_gripper',
+                    rawCode: {
+                        imports: 'from rover import *\nfrom robocon import *\n',
+                        code:'/*{ACTION}*/\n'
+                    },
+                    text: [
+                        {
+                            default: '[ACTION] tay gắp',
+                            id: "gui.externalExtension.YoloBitRoboconExtension.rover_control_gripper"
+                        }
+                    ],
+                    arguments: {
+                        ACTION: {
+                            menu: 'actions'
+                        }
+                    },
+                    blockType: Scratch.BlockType.COMMAND
                 }
-            ]                                         
+            ],
+            menus:{
+                servo_pins: [
+                    {
+                        text: {
+                            default: 'S1',
+                            id: 'gui.externalExtension.YoloBitRoboconExtension.s1'
+                        },
+                        value: '1'
+                    },
+                    {
+                        text: {
+                            default:'S2',
+                            id: 'gui.externalExtension.YoloBitRoboconExtension.s2'
+                        },
+                        value: '2'
+                    }
+                ],
+                actions: [
+                    {
+                        text: {
+                            default: 'nâng',
+                            id: 'gui.externalExtension.YoloBitRoboconExtension.up'
+                        },
+                        value: 'set_servo_position(2, 90, 80)'
+                    },
+                    {
+                        text: {
+                            default:'hạ',
+                            id: 'gui.externalExtension.YoloBitRoboconExtension.down'
+                        },
+                        value: 'set_servo_position(2, 0, 80)'
+                    },
+                    {
+                        text: {
+                            default: 'đóng',
+                            id: 'gui.externalExtension.YoloBitRoboconExtension.close'
+                        },
+                        value: 'set_servo_position(1, 90, 80)'
+                    },
+                    {
+                        text: {
+                            default:'mở',
+                            id: 'gui.externalExtension.YoloBitRoboconExtension.open'
+                        },
+                        value: 'set_servo_position(1, 0, 80)'
+                    }
+                ]
+            }                                         
         };
     }
 }

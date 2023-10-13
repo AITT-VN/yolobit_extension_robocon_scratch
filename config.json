@@ -13,7 +13,13 @@
             "gui.externalExtension.YoloBitRoboconExtension.robocon_follow_line_until": "dò line với tốc độ [SPEED] cho đến khi [LAMBDA] tối đa [TIME] giây",
             "gui.externalExtension.YoloBitRoboconExtension.follow_line_in_time": "dò line với tốc độ [SPEED] trong [TIME_DELAY] giây",
             "gui.externalExtension.YoloBitRoboconExtension.turn_until_condition": "quay động cơ trái [SPEED_LEFT] phải [SPEED_RIGHT] đến khi [LAMBDA] tối đa [TIME_DELAY] giây",
-            "gui.externalExtension.YoloBitRoboconExtension.turn_until_black_line": "quay động cơ trái [SPEED_LEFT] phải [SPEED_RIGHT] đến khi gặp vạch đen tối đa [TIME_DELAY] giây"
+            "gui.externalExtension.YoloBitRoboconExtension.turn_until_black_line": "quay động cơ trái [SPEED_LEFT] phải [SPEED_RIGHT] đến khi gặp vạch đen tối đa [TIME_DELAY] giây",
+            "gui.externalExtension.YoloBitRoboconExtension.rover_control_servo": "servo [SERVO] xoay [POSITION] độ tốc độ [SPEED] (0-100)",
+            "gui.externalExtension.YoloBitRoboconExtension.rover_control_gripper": "[ACTION] tay gắp",
+            "gui.externalExtension.YoloBitRoboconExtension.up": "nâng",
+            "gui.externalExtension.YoloBitRoboconExtension.down": "hạ",
+            "gui.externalExtension.YoloBitRoboconExtension.open": "mở",
+            "gui.externalExtension.YoloBitRoboconExtension.close": "đóng"
 
         },
         "en": {
@@ -22,7 +28,13 @@
             "gui.externalExtension.YoloBitRoboconExtension.robocon_follow_line_until": "follow line with speed [SPEED] until [LAMBDA] maximum [TIME] seconds",
             "gui.externalExtension.YoloBitRoboconExtension.follow_line_in_time": "follow line with speed [SPEED] in [TIME_DELAY] seconds",
             "gui.externalExtension.YoloBitRoboconExtension.turn_until_condition": "motor left rotates [SPEED_LEFT] right [SPEED_RIGHT] until [LAMBDA] maximum [TIME_DELAY] seconds",
-            "gui.externalExtension.YoloBitRoboconExtension.turn_until_black_line": "motor left rotates [SPEED_LEFT] right [SPEED_RIGHT] until meet blackline maximum [TIME_DELAY] seconds"
+            "gui.externalExtension.YoloBitRoboconExtension.turn_until_black_line": "motor left rotates [SPEED_LEFT] right [SPEED_RIGHT] until meet blackline maximum [TIME_DELAY] seconds",
+            "gui.externalExtension.YoloBitRoboconExtension.rover_control_servo": "servo [SERVO] rotate [POSITION] with speed [SPEED] (0-100)",
+            "gui.externalExtension.YoloBitRoboconExtension.rover_control_gripper": "[ACTION] gripper",
+            "gui.externalExtension.YoloBitRoboconExtension.up": "lift",
+            "gui.externalExtension.YoloBitRoboconExtension.down": "drop",
+            "gui.externalExtension.YoloBitRoboconExtension.open": "open",
+            "gui.externalExtension.YoloBitRoboconExtension.close": "close"
         }
 }
 }
