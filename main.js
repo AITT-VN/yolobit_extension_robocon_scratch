@@ -131,17 +131,21 @@ class Scratch3YoloBitRobocon {
                     opcode: 'rover_control_gripper',
                     rawCode: {
                         imports: 'from rover import *\nfrom robocon import *\n',
-                        code:'/*{ACTION}*/\n'
+                        code:'/*{ACTION}*/, /*{SPEED}*/)\n'
                     },
                     text: [
                         {
-                            default: '[ACTION] tay gắp',
+                            default: '[ACTION] tay gắp tốc độ [SPEED] (0-100)',
                             id: "gui.externalExtension.YoloBitRoboconExtension.rover_control_gripper"
                         }
                     ],
                     arguments: {
                         ACTION: {
                             menu: 'actions'
+                        },
+                        SPEED: {
+                            type: Scratch.ArgumentType.NUMBER,
+                            defaultValue: 80
                         }
                     },
                     blockType: Scratch.BlockType.COMMAND
@@ -198,28 +202,28 @@ class Scratch3YoloBitRobocon {
                             default: 'nâng',
                             id: 'gui.externalExtension.YoloBitRoboconExtension.up'
                         },
-                        value: 'set_servo_position(2, 90, 80)'
+                        value: 'set_servo_position(2, 90'
                     },
                     {
                         text: {
                             default:'hạ',
                             id: 'gui.externalExtension.YoloBitRoboconExtension.down'
                         },
-                        value: 'set_servo_position(2, 0, 80)'
+                        value: 'set_servo_position(2, 0'
                     },
                     {
                         text: {
                             default: 'đóng',
                             id: 'gui.externalExtension.YoloBitRoboconExtension.close'
                         },
-                        value: 'set_servo_position(1, 90, 80)'
+                        value: 'set_servo_position(1, 90'
                     },
                     {
                         text: {
                             default:'mở',
                             id: 'gui.externalExtension.YoloBitRoboconExtension.open'
                         },
-                        value: 'set_servo_position(1, 0, 80)'
+                        value: 'set_servo_position(1, 0'
                     }
                 ]
             }                                         
